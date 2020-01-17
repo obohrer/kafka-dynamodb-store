@@ -1,4 +1,4 @@
-(defproject com.obohrer/kafka-dynamodb-store "0.0.1-SNAPSHOT"
+(defproject com.obohrer/kafka-dynamodb-store "0.0.1"
   :description "Kafka storage handlers to bypass zookeeper"
   :url "https://github.com/obohrer/kafka-dynamodb-store"
 
