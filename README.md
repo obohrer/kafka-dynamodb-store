@@ -26,6 +26,8 @@ KafkaServer {
   org.apache.kafka.common.security.scram.ScramLoginModule optional
   dynamodb_scram_store_table_name="YourDynamoDBTableName"
   dynamodb_scram_store_region="AWS_REGION"
+  // Optionally set a kms key id to encrypt entries using KMS
+  dynamodb_scram_store_kms_key_id="9b6af687-dc28-442e-9028-000000000000"
   ;
 };
 ```

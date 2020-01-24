@@ -7,6 +7,7 @@
 
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/tools.logging "0.5.0"]
+                 [org.clojure/core.memoize "0.8.2"]
 
                  [com.brunobonacci/safely "0.5.0-alpha8"]
 
@@ -15,10 +16,11 @@
                  [amazonica "0.3.152"
                   :exclusions [com.amazonaws/aws-java-sdk
                                com.amazonaws/aws-java-sdk-core]]
-                 [com.amazonaws/aws-java-sdk-core "1.11.705"]
-                 [com.amazonaws/aws-java-sdk-sts  "1.11.705"]
-                 [com.amazonaws/aws-java-sdk-dynamodb "1.11.705"]
-                 ]
+                 [com.amazonaws/aws-java-sdk-core "1.11.710"]
+                 [com.amazonaws/aws-java-sdk-sts  "1.11.710"]
+                 [com.amazonaws/aws-java-sdk-kms  "1.11.710"]
+                 [com.amazonaws/aws-java-sdk-dynamodb "1.11.710"]
+                 [com.amazonaws/aws-encryption-sdk-java "1.6.1"]]
 
   :repl-options {:init-ns kafka-dynamodb-store.scram.core}
   :profiles {:dev

@@ -32,6 +32,7 @@
              (into {}))
         new-config {:table-name (get m "dynamodb_scram_store_table_name")
                     :endpoint   (get m "dynamodb_scram_store_region")
+                    :kms-key-id (get m "dynamodb_scram_store_kms_key_id")
                     :mechanism  (keyword mechanism)}]
     (reset! (.state this)
             new-config)
