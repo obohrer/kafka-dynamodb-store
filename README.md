@@ -7,20 +7,21 @@ The current implementation allows you to store scram credentials in AWS DynamoDB
 To enable it if you are using `sasl_ssl` add the following lines to your `kafka.properties` file:
 
 ```
-#if you want to use SCRAM-SHA-512
+#to use SCRAM-SHA-512:
 
 sasl.enabled.mechanisms=SCRAM-SHA-512
 listener.name.sasl_ssl.scram-sha-512.sasl.server.callback.handler.class=kafka_dynamodb_store.scram.CallbackHandler
 
 
-#If you want to support multiple mechanisms:
+#to support multiple mechanisms:
+
 sasl.enabled.mechanisms=SCRAM-SHA-512,SCRAM-SHA-256
 listener.name.sasl_ssl.scram-sha-512.sasl.server.callback.handler.class=kafka_dynamodb_store.scram.CallbackHandler
 listener.name.sasl_ssl.scram-sha-256.sasl.server.callback.handler.class=kafka_dynamodb_store.scram.CallbackHandler
 
 ```
 
-And in the kafka.jaas specify the `dynamodb_scram_store_table_name` and `dynamodb_scram_store_region=` entries, eg:
+In your `kafka.jaas` file specify the `dynamodb_scram_store_table_name` and `dynamodb_scram_store_region=` entries, eg:
 ```
 KafkaServer {
   org.apache.kafka.common.security.scram.ScramLoginModule optional
